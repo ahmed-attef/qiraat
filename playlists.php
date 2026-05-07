@@ -6,7 +6,7 @@
 
 $host = "localhost";
 $user = "root";
-$pass = "12345";
+$pass = "0000";
 $db   = "qiraatLearningdb";
 
 $conn = new mysqli($host, $user, $pass, $db);
