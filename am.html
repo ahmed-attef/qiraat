@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Rana ❤️</title>
+
+<link rel="stylesheet" href="rana.css">
+</head>
+<body>
+
+<div class="hearts"></div>
+
+<div class="container">
+
+    <h1>🎂 Happy Birthday Rana 🎂</h1>
+
+    <h2>Sweet 20 ❤️</h2>
+
+    <p id="typing"></p>
+
+    <div class="record-container">
+        <div class="record">
+            <img id="mainPhoto" src="media/main4.jpeg" alt="">
+        </div>
+    </div>
+
+    <div class="gallery">
+        <img src="media/rana1.jpeg" class="thumb">
+        <img src="media/rana2.jpeg" class="thumb">
+        <img src="media/rana3.jpeg" class="thumb">
+        <img src="media/rana4.jpeg" class="thumb">
+    </div>
+
+    <button id="startBtn">
+        ❤️ Click Here For Your Surprise ❤️
+    </button>
+
+</div>
+
+<audio id="music" loop>
+    <source src="media/song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const message =
+"Every year with you is more beautiful than the last. I wish you happiness, success, and all the wonderful things you deserve.I hope that next year you'll be my wife, and I truly wish to spend the rest of my life with you.Thank you for being part of my life. You mean more to me than words can express.    I love you, and I wish you the happiest ♥️";
+
+let i = 0;
+
+function typeWriter() {
+    if (i < message.length) {
+        document.getElementById("typing").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+
+const btn = document.getElementById("startBtn");
+const music = document.getElementById("music");
+
+btn.addEventListener("click", () => {
+
+    music.play();
+
+    btn.style.display = "none";
+
+    typeWriter();
+
+});
+
+const photos = [
+    "media/rana1.jpeg",
+    "media/rana2.jpeg",
+    "media/rana3.jpeg",
+    "media/rana4.jpeg"
+];
+
+let current = 0;
+
+
+
+const thumbs = document.querySelectorAll(".thumb");
+
+thumbs.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        document.getElementById("mainPhoto").src =
+        img.src;
+
+    });
+
+});
+
+const hearts = document.querySelector(".hearts");
+
+for(let x=0;x<40;x++){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"%";
+
+    heart.style.animationDuration=
+    (Math.random()*5+5)+"s";
+
+    heart.style.fontSize=
+    (Math.random()*20+15)+"px";
+
+    hearts.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
